@@ -7,39 +7,39 @@ import { Star, ChevronLeft, ChevronRight, Quote } from 'lucide-react';
 
 const TESTIMONIALS = [
   {
-    name: 'Rajesh Kumar',
+    name: 'Suresh Babu',
     role: 'Farm Owner',
-    company: 'GreenFields Agriculture, Tamil Nadu',
-    message: 'eptoFlow transformed our farming operations. Water consumption dropped by 40% in the first month, and our yields improved significantly. The remote monitoring dashboard is a game-changer.',
-    rating: 5,
-    avatar: 'RK',
+    company: 'Suresh Organic Farms, Coimbatore',
+    message: 'Honestly, I was skeptical at first. But after using eptoFlow for two months, my water bill dropped noticeably and I stopped worrying about manually watering. The app is simple enough that even my farm workers figured it out quickly. A few minor bugs in the early days but the team fixed them fast.',
+    rating: 4,
+    avatar: 'SB',
     gradient: 'from-green-500 to-cyan-500',
   },
   {
-    name: 'Priya Sharma',
-    role: 'Operations Director',
-    company: 'TechManufacture Pvt. Ltd.',
-    message: 'The industrial IoT monitoring system from Eptosi cut our downtime by 60%. Their team\'s expertise in embedded systems and cloud integration is exceptional.',
-    rating: 5,
-    avatar: 'PS',
+    name: 'Divya Raghunathan',
+    role: 'Production Manager',
+    company: 'Precision Components Pvt. Ltd., Chennai',
+    message: 'We needed machine uptime monitoring for our factory floor. Eptosi built us a custom dashboard that tracks 12 machines in real time. Setup took longer than expected — about 3 weeks — but the end result works reliably. The team was always responsive on WhatsApp whenever we had questions.',
+    rating: 4,
+    avatar: 'DR',
     gradient: 'from-sky-500 to-violet-500',
   },
   {
-    name: 'Arjun Nair',
-    role: 'CTO',
-    company: 'SmartHome Solutions',
-    message: 'Working with Eptosi Smart Solutions was one of the best decisions we made. The team delivered a scalable IoT platform on time, on budget, and beyond our expectations.',
+    name: 'Mohammed Imran',
+    role: 'Co-founder',
+    company: 'GreenGrow Hydroponics, Bengaluru',
+    message: 'We\'re a small startup and needed an affordable automation solution for our hydroponic setup. Eptosi worked within our budget and didn\'t oversell. The sensor integration and scheduling features work exactly as described. Would definitely recommend for small agri-tech businesses.',
     rating: 5,
-    avatar: 'AN',
+    avatar: 'MI',
     gradient: 'from-orange-500 to-rose-500',
   },
   {
-    name: 'Meena Krishnan',
-    role: 'Research Lead',
-    company: 'AgriTech Institute, Chennai',
-    message: 'The smart irrigation system they built for our research facility handles over 200 sensor nodes flawlessly. Real-time data accuracy and system reliability have been outstanding.',
-    rating: 5,
-    avatar: 'MK',
+    name: 'Kavitha Sundaram',
+    role: 'Department Head — R&D',
+    company: 'Tamil Nadu Agricultural University',
+    message: 'We deployed their irrigation automation system across our experimental plots. The data logging and remote monitoring features have been genuinely useful for our research. One request: the export format for sensor data could be improved. Overall, solid product and helpful support.',
+    rating: 4,
+    avatar: 'KS',
     gradient: 'from-purple-500 to-pink-500',
   },
 ];
@@ -101,8 +101,12 @@ export default function Testimonials() {
               >
                 {/* Stars */}
                 <div className="flex gap-1 mb-6">
-                  {Array.from({ length: TESTIMONIALS[current].rating }).map((_, i) => (
-                    <Star key={i} size={18} className="text-amber-400 fill-amber-400" />
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <Star
+                      key={i}
+                      size={18}
+                      className={i < TESTIMONIALS[current].rating ? 'text-amber-400 fill-amber-400' : 'text-slate-700 fill-slate-700'}
+                    />
                   ))}
                 </div>
 
