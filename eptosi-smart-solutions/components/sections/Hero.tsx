@@ -65,6 +65,20 @@ export default function Hero() {
         style={{ y, opacity }}
         className="relative z-10 container-custom text-center pt-40 pb-24 max-w-5xl mx-auto"
       >
+        {/* Top badge */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="flex justify-center mb-10"
+        >
+          <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-sky-500/20 bg-sky-500/[0.07] backdrop-blur-sm">
+            <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
+            <span className="text-sky-300 text-sm font-medium tracking-wide">Part of Eptosi Group of Companies</span>
+            <span className="w-1.5 h-1.5 rounded-full bg-sky-400/50" />
+          </div>
+        </motion.div>
+
         {/* Main heading */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
