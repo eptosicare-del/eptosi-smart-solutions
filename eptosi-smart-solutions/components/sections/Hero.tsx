@@ -8,19 +8,17 @@ import { ArrowRight, ChevronDown } from 'lucide-react';
 export default function Hero() {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] });
-  const y = useTransform(scrollYProgress, [0, 1], ['0%', '25%']);
+  const y = useTransform(scrollYProgress, [0, 1], ['0%', '20%']);
   const opacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
 
   return (
     <section
       ref={ref}
       id="hero"
-      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden"
+      className="relative min-h-screen overflow-hidden"
     >
-      {/* ── Deep layered background ── */}
+      {/* ── Backgrounds ── */}
       <div className="absolute inset-0 bg-[#030712]" />
-
-      {/* Subtle grid */}
       <div
         className="absolute inset-0 opacity-[0.025]"
         style={{
@@ -28,8 +26,6 @@ export default function Hero() {
           backgroundSize: '72px 72px',
         }}
       />
-
-      {/* Central glow — large, soft */}
       <div
         className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[600px] pointer-events-none"
         style={{
@@ -37,16 +33,10 @@ export default function Hero() {
           filter: 'blur(1px)',
         }}
       />
-
-      {/* Bottom green accent */}
       <div
         className="absolute bottom-0 right-1/4 w-[400px] h-[300px] pointer-events-none"
-        style={{
-          background: 'radial-gradient(ellipse, rgba(34,197,94,0.07) 0%, transparent 70%)',
-        }}
+        style={{ background: 'radial-gradient(ellipse, rgba(34,197,94,0.07) 0%, transparent 70%)' }}
       />
-
-      {/* Animated orbs */}
       <motion.div
         className="absolute top-1/3 left-1/4 w-72 h-72 rounded-full pointer-events-none"
         style={{ background: 'radial-gradient(circle, rgba(14,165,233,0.07) 0%, transparent 70%)' }}
@@ -60,40 +50,27 @@ export default function Hero() {
         transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut', delay: 3 }}
       />
 
-      {/* ── Main content ── */}
+      {/* ── Main content — always starts below fixed navbar (96px) ── */}
       <motion.div
         style={{ y, opacity }}
-        className="relative z-10 container-custom text-center pt-48 pb-16 md:pb-24 max-w-5xl mx-auto"
+        className="relative z-10 container-custom text-center max-w-5xl mx-auto"
+        style={{ paddingTop: 'clamp(6rem, 14vw, 10rem)', paddingBottom: '4rem' }}
       >
-        {/* Top badge */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="flex justify-center mb-10"
-        >
-          <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-sky-500/20 bg-sky-500/[0.07] backdrop-blur-sm">
-            <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-            <span className="text-sky-300 text-sm font-medium tracking-wide">Part of Eptosi Group of Companies</span>
-            <span className="w-1.5 h-1.5 rounded-full bg-sky-400/50" />
-          </div>
-        </motion.div>
-
         {/* Main heading */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.1 }}
+          transition={{ duration: 0.7 }}
         >
-          <h1 className="font-bold leading-[1.08] tracking-tight mb-7">
+          <h1 className="font-bold leading-[1.08] tracking-tight mb-6">
             <span
-              className="block text-4xl sm:text-5xl md:text-6xl lg:text-[82px] text-white mb-2"
+              className="block text-[clamp(2.2rem,8vw,5.2rem)] text-white mb-1"
               style={{ letterSpacing: '-0.02em' }}
             >
               Engineering
             </span>
             <span
-              className="block text-4xl sm:text-5xl md:text-6xl lg:text-[82px] mb-2"
+              className="block text-[clamp(2.2rem,8vw,5.2rem)] mb-1"
               style={{
                 letterSpacing: '-0.02em',
                 backgroundImage: 'linear-gradient(135deg, #38bdf8 0%, #0ea5e9 40%, #06b6d4 70%, #22c55e 100%)',
@@ -105,7 +82,7 @@ export default function Hero() {
               Smarter Futures
             </span>
             <span
-              className="block text-4xl sm:text-5xl md:text-6xl lg:text-[82px] text-white"
+              className="block text-[clamp(2.2rem,8vw,5.2rem)] text-white"
               style={{ letterSpacing: '-0.02em' }}
             >
               with{' '}
@@ -124,8 +101,8 @@ export default function Hero() {
         <motion.p
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.25 }}
-          className="text-lg md:text-xl text-slate-400 leading-relaxed mb-12 max-w-xl mx-auto"
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="text-base sm:text-lg md:text-xl text-slate-400 leading-relaxed mb-10 max-w-xl mx-auto px-4 sm:px-0"
         >
           We build intelligent automation ecosystems for homes,
           agriculture and industries — from embedded hardware to cloud dashboards.
@@ -135,18 +112,15 @@ export default function Hero() {
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.35 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center mb-20"
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="flex flex-col sm:flex-row gap-3 justify-center mb-16 px-6 sm:px-0"
         >
           <a
             href="#solutions"
             className="group inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-semibold text-white text-[15px] transition-all duration-300"
-            style={{
-              background: 'linear-gradient(135deg, #0ea5e9, #06b6d4)',
-              boxShadow: '0 0 0 0 rgba(14,165,233,0)',
-            }}
+            style={{ background: 'linear-gradient(135deg, #0ea5e9, #06b6d4)' }}
             onMouseEnter={e => (e.currentTarget.style.boxShadow = '0 8px 30px rgba(14,165,233,0.35)')}
-            onMouseLeave={e => (e.currentTarget.style.boxShadow = '0 0 0 0 rgba(14,165,233,0)')}
+            onMouseLeave={e => (e.currentTarget.style.boxShadow = 'none')}
           >
             Explore Solutions
             <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
@@ -160,12 +134,12 @@ export default function Hero() {
           </a>
         </motion.div>
 
-        {/* ── Premium stats bar ── */}
+        {/* Stats bar */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          className="grid grid-cols-2 sm:flex sm:flex-wrap items-center justify-center gap-0 max-w-2xl mx-auto rounded-2xl border border-white/[0.08] overflow-hidden"
+          transition={{ duration: 0.6, delay: 0.45 }}
+          className="grid grid-cols-2 sm:grid-cols-4 max-w-2xl mx-auto rounded-2xl border border-white/[0.08] overflow-hidden"
           style={{ background: 'rgba(255,255,255,0.025)', backdropFilter: 'blur(12px)' }}
         >
           {[
@@ -174,32 +148,35 @@ export default function Hero() {
             { val: '99%', label: 'Uptime SLA' },
             { val: '5+', label: 'Industries' },
           ].map((s, i) => (
-            <div
-              key={s.label}
-              className="flex-1 min-w-[100px] px-6 py-5 text-center relative"
-            >
-              {i > 0 && (
-                <div className="absolute left-0 top-1/2 -translate-y-1/2 w-px h-8 bg-white/10" />
+            <div key={s.label} className="px-4 py-5 text-center relative">
+              {i > 0 && i % 2 !== 0 && (
+                <div className="absolute left-0 top-1/2 -translate-y-1/2 w-px h-8 bg-white/10 hidden sm:block" />
               )}
-              <p className="text-2xl font-bold text-white mb-0.5">{s.val}</p>
-              <p className="text-xs text-slate-500 font-medium">{s.label}</p>
+              {i > 0 && i % 2 === 0 && (
+                <div className="absolute top-0 left-0 right-0 h-px bg-white/10 sm:hidden" />
+              )}
+              {i > 0 && i < 4 && (
+                <div className="absolute left-0 top-1/2 -translate-y-1/2 w-px h-8 bg-white/10 hidden sm:block" />
+              )}
+              <p className="text-2xl sm:text-3xl font-bold text-white mb-0.5">{s.val}</p>
+              <p className="text-[11px] sm:text-xs text-slate-500 font-medium">{s.label}</p>
             </div>
           ))}
         </motion.div>
 
-        {/* ── Trusted by strip ── */}
+        {/* Trusted for */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.8 }}
-          className="mt-14 flex flex-col items-center gap-4"
+          transition={{ delay: 0.7 }}
+          className="mt-10 flex flex-col items-center gap-3"
         >
           <p className="text-slate-600 text-xs uppercase tracking-[0.2em] font-medium">Trusted for</p>
-          <div className="flex flex-wrap justify-center gap-3">
+          <div className="flex flex-wrap justify-center gap-2">
             {['Smart Agriculture', 'Industrial IoT', 'Water Automation', 'Embedded Systems', 'AI Automation'].map((tag) => (
               <span
                 key={tag}
-                className="px-3.5 py-1.5 rounded-full text-xs font-medium text-slate-400 border border-white/[0.07]"
+                className="px-3 py-1.5 rounded-full text-xs font-medium text-slate-400 border border-white/[0.07]"
                 style={{ background: 'rgba(255,255,255,0.025)' }}
               >
                 {tag}
@@ -213,14 +190,11 @@ export default function Hero() {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.4 }}
+        transition={{ delay: 1.2 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
       >
         <span className="text-[10px] text-slate-600 tracking-[0.25em] uppercase">Scroll</span>
-        <motion.div
-          animate={{ y: [0, 5, 0] }}
-          transition={{ duration: 1.8, repeat: Infinity }}
-        >
+        <motion.div animate={{ y: [0, 5, 0] }} transition={{ duration: 1.8, repeat: Infinity }}>
           <ChevronDown size={16} className="text-slate-600" />
         </motion.div>
       </motion.div>
