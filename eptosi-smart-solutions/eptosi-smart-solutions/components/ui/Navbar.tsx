@@ -2,9 +2,8 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Zap } from 'lucide-react';
 
 const NAV_LINKS = [
   { label: 'About', href: '#about' },
@@ -42,15 +41,25 @@ export default function Navbar() {
       >
         <div className="container-custom flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center group">
-            <Image
-              src="/logo.png"
-              alt="Eptosi Smart Solutions"
-              width={140}
-              height={48}
-              className="h-10 w-auto object-contain group-hover:opacity-90 transition-opacity"
-              priority
-            />
+          <Link href="/" className="flex items-center gap-2.5 group">
+            <div className="relative w-9 h-9">
+              <motion.div
+                className="absolute inset-0 rounded-lg bg-gradient-to-br from-sky-500 to-cyan-400 opacity-20 group-hover:opacity-40 transition-opacity"
+                animate={{ scale: [1, 1.1, 1] }}
+                transition={{ duration: 3, repeat: Infinity }}
+              />
+              <div className="absolute inset-0 rounded-lg bg-gradient-to-br from-sky-500 to-cyan-400 flex items-center justify-center">
+                <Zap size={18} className="text-white" fill="currentColor" />
+              </div>
+            </div>
+            <div>
+              <span className="block text-base font-bold text-white leading-none tracking-tight">
+                EPTOSI
+              </span>
+              <span className="block text-[10px] text-sky-400 font-semibold tracking-[0.15em] uppercase leading-none mt-0.5">
+                Smart Solutions
+              </span>
+            </div>
           </Link>
 
           {/* Desktop Links */}

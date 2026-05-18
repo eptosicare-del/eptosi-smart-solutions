@@ -1,9 +1,8 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, ArrowUpRight } from 'lucide-react';
+import { Zap, Mail, Phone, MapPin, ArrowUpRight } from 'lucide-react';
 import Link from 'next/link';
-import Image from 'next/image';
 
 const SOLUTIONS = [
   'eptoFlow', 'Smart Irrigation', 'Water Automation',
@@ -31,14 +30,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <Link href="/" className="flex items-center mb-4">
-              <Image
-                src="/logo.png"
-                alt="Eptosi Smart Solutions"
-                width={140}
-                height={48}
-                className="h-10 w-auto object-contain"
-              />
+            <Link href="/" className="flex items-center gap-2.5 mb-4">
+              <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-sky-500 to-cyan-400 flex items-center justify-center">
+                <Zap size={18} className="text-white" fill="currentColor" />
+              </div>
+              <div>
+                <span className="block text-base font-bold text-white leading-none">EPTOSI</span>
+                <span className="block text-[10px] text-sky-400 font-semibold tracking-widest uppercase leading-none mt-0.5">Smart Solutions</span>
+              </div>
             </Link>
             <p className="text-slate-400 text-sm leading-relaxed mb-4">
               Smart IoT & Automation Solutions for the Future. Part of Eptosi Group of Companies.
@@ -89,8 +88,8 @@ export default function Footer() {
                 </div>
                 <div>
                   <p className="text-[11px] text-slate-500 uppercase tracking-wider mb-1">Email</p>
-                  <a href="mailto:enquries@eptosismartsolutions.com" className="text-slate-300 hover:text-sky-400 text-sm transition-colors">
-                    enquries@eptosismartsolutions.com
+                  <a href="mailto:contact@eptosismartsolutions.com" className="text-slate-300 hover:text-sky-400 text-sm transition-colors">
+                    contact@eptosismartsolutions.com
                   </a>
                 </div>
               </li>
@@ -100,8 +99,8 @@ export default function Footer() {
                 </div>
                 <div>
                   <p className="text-[11px] text-slate-500 uppercase tracking-wider mb-1">Phone</p>
-                  <a href="tel:+916369129995" className="text-slate-300 hover:text-sky-400 text-sm transition-colors">
-                    +91 63691 29995
+                  <a href="tel:+919876543210" className="text-slate-300 hover:text-sky-400 text-sm transition-colors">
+                    +91 98765 43210
                   </a>
                 </div>
               </li>
@@ -111,7 +110,7 @@ export default function Footer() {
                 </div>
                 <div>
                   <p className="text-[11px] text-slate-500 uppercase tracking-wider mb-1">Location</p>
-                  <span className="text-slate-300 text-sm">No.2 Janaki Nagar, Maduravoyal,<br />Chennai — 600 095</span>
+                  <span className="text-slate-300 text-sm">Chennai, Tamil Nadu, India</span>
                 </div>
               </li>
             </ul>
