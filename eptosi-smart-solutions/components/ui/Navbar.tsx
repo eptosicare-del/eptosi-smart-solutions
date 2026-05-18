@@ -46,9 +46,9 @@ export default function Navbar() {
             <Image
               src="/logo.png"
               alt="Eptosi Smart Solutions"
-              width={240}
-              height={80}
-              className="h-16 w-auto object-contain group-hover:opacity-90 transition-opacity"
+              width={280}
+              height={90}
+              className="h-20 w-auto object-contain group-hover:opacity-90 transition-opacity"
               priority
             />
           </Link>
