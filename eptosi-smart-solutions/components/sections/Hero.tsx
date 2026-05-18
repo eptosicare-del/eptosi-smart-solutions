@@ -63,7 +63,7 @@ export default function Hero() {
       {/* ── Main content ── */}
       <motion.div
         style={{ y, opacity }}
-        className="relative z-10 container-custom text-center pt-32 pb-24 max-w-5xl mx-auto"
+        className="relative z-10 container-custom text-center pt-52 pb-24 max-w-5xl mx-auto"
       >
         {/* Top badge */}
         <motion.div
