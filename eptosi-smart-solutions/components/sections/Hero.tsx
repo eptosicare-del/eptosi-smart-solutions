@@ -52,9 +52,8 @@ export default function Hero() {
 
       {/* ── Main content — always starts below fixed navbar (96px) ── */}
       <motion.div
-        style={{ y, opacity }}
+        style={{ y, opacity, paddingTop: 'clamp(6rem, 14vw, 10rem)', paddingBottom: '4rem' }}
         className="relative z-10 container-custom text-center max-w-5xl mx-auto"
-        style={{ paddingTop: 'clamp(6rem, 14vw, 10rem)', paddingBottom: '4rem' }}
       >
         {/* Main heading */}
         <motion.div
