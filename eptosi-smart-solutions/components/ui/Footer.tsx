@@ -88,8 +88,8 @@ export default function Footer() {
                 </div>
                 <div>
                   <p className="text-[11px] text-slate-500 uppercase tracking-wider mb-1">Email</p>
-                  <a href="mailto:contact@eptosismartsolutions.com" className="text-slate-300 hover:text-sky-400 text-sm transition-colors">
-                    contact@eptosismartsolutions.com
+                  <a href="mailto:enquries@eptosismartsolutions.com" className="text-slate-300 hover:text-sky-400 text-sm transition-colors">
+                    enquries@eptosismartsolutions.com
                   </a>
                 </div>
               </li>
@@ -99,8 +99,8 @@ export default function Footer() {
                 </div>
                 <div>
                   <p className="text-[11px] text-slate-500 uppercase tracking-wider mb-1">Phone</p>
-                  <a href="tel:+919876543210" className="text-slate-300 hover:text-sky-400 text-sm transition-colors">
-                    +91 98765 43210
+                  <a href="tel:+916369129995" className="text-slate-300 hover:text-sky-400 text-sm transition-colors">
+                    +91 63691 29995
                   </a>
                 </div>
               </li>
@@ -110,7 +110,7 @@ export default function Footer() {
                 </div>
                 <div>
                   <p className="text-[11px] text-slate-500 uppercase tracking-wider mb-1">Location</p>
-                  <span className="text-slate-300 text-sm">Chennai, Tamil Nadu, India</span>
+                  <span className="text-slate-300 text-sm">No.2 Janaki Nagar, Maduravoyal,<br />Chennai — 600 095</span>
                 </div>
               </li>
             </ul>

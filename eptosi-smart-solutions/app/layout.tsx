@@ -107,7 +107,7 @@ export default function RootLayout({
               contactPoint: {
                 '@type': 'ContactPoint',
                 contactType: 'customer service',
-                email: 'contact@eptosismartsolutions.com',
+                email: 'enquries@eptosismartsolutions.com',
                 areaServed: 'IN',
                 availableLanguage: ['English', 'Tamil'],
               },

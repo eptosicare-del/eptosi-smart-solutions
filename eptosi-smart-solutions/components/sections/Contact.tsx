@@ -87,9 +87,9 @@ export default function Contact() {
             </div>
 
             {[
-              { icon: Mail, label: 'Email', value: 'contact@eptosismartsolutions.com', href: 'mailto:contact@eptosismartsolutions.com' },
-              { icon: Phone, label: 'Phone', value: '+91 98765 43210', href: 'tel:+919876543210' },
-              { icon: MapPin, label: 'Address', value: 'Chennai, Tamil Nadu, India', href: '#' },
+              { icon: Mail, label: 'Email', value: 'enquries@eptosismartsolutions.com', href: 'mailto:enquries@eptosismartsolutions.com' },
+              { icon: Phone, label: 'Phone', value: '+91 63691 29995', href: 'tel:+916369129995' },
+              { icon: MapPin, label: 'Address', value: 'No.2 Janaki Nagar, Maduravoyal, Chennai — 600 095', href: '#' },
             ].map(({ icon: Icon, label, value, href }) => (
               <a key={label} href={href} className="flex items-start gap-4 group">
                 <div className="w-10 h-10 rounded-xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center flex-shrink-0 group-hover:bg-sky-500/20 transition-colors">
