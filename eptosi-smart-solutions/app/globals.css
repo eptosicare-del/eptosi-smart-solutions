@@ -29,7 +29,10 @@ body {
   color: #e2e8f0;
   font-family: var(--font-inter), system-ui, sans-serif;
   overflow-x: hidden;
-  cursor: none; /* Custom cursor */
+}
+
+@media (hover: hover) and (pointer: fine) {
+  body { cursor: none; }
 }
 
 /* ── Custom Scrollbar ─────────────────────────────────────── */
@@ -125,11 +128,11 @@ body {
   }
 
   .section-title {
-    @apply text-4xl md:text-5xl lg:text-6xl font-bold leading-tight;
+    @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight;
   }
 
   .section-subtitle {
-    @apply text-lg text-slate-400 leading-relaxed max-w-2xl;
+    @apply text-base sm:text-lg text-slate-400 leading-relaxed max-w-2xl;
   }
 
   .glow-dot {
@@ -224,9 +227,9 @@ body {
   }
 }
 
-/* ── No cursor on interactive elements ───────────────────── */
-a, button, [role="button"] {
-  cursor: none;
+/* ── No cursor on interactive elements (desktop only) ────── */
+@media (hover: hover) and (pointer: fine) {
+  a, button, [role="button"] { cursor: none; }
 }
 
 /* ── Noise texture overlay ────────────────────────────────── */

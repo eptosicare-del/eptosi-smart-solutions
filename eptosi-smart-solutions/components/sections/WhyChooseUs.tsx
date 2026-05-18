@@ -53,7 +53,7 @@ export default function WhyChooseUs() {
   const [ref, inView] = useInView({ threshold: 0.1, triggerOnce: true });
 
   return (
-    <section id="why-us" ref={ref} className="py-32 relative overflow-hidden">
+    <section id="why-us" ref={ref} className="py-16 md:py-32 relative overflow-hidden">
       <div className="absolute inset-0 opacity-30" style={{
         backgroundImage: 'radial-gradient(circle at 50% 50%, rgba(14,165,233,0.07) 0%, transparent 60%)',
       }} />
@@ -132,14 +132,14 @@ export default function WhyChooseUs() {
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.7 }}
-          className="mt-20 rounded-2xl border border-sky-500/20 p-10 text-center relative overflow-hidden"
+          className="mt-12 md:mt-20 rounded-2xl border border-sky-500/20 p-6 sm:p-10 text-center relative overflow-hidden"
           style={{ background: 'linear-gradient(135deg, rgba(14,165,233,0.08) 0%, rgba(6,182,212,0.04) 100%)' }}
         >
           <div className="absolute inset-0" style={{
             backgroundImage: 'radial-gradient(circle at 50% 0%, rgba(14,165,233,0.15) 0%, transparent 60%)',
           }} />
           <div className="relative z-10">
-            <h3 className="text-3xl font-bold text-white mb-4">
+            <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4">
               Ready to Automate Your World?
             </h3>
             <p className="text-slate-400 mb-8 max-w-xl mx-auto">

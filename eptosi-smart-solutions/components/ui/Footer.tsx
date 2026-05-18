@@ -35,9 +35,9 @@ export default function Footer() {
               <Image
                 src="/logo.png"
                 alt="Eptosi Smart Solutions"
-                width={140}
-                height={48}
-                className="h-10 w-auto object-contain"
+                width={180}
+                height={64}
+                className="h-14 w-auto object-contain"
               />
             </Link>
             <p className="text-slate-400 text-sm leading-relaxed mb-4">
@@ -119,11 +119,15 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-slate-500 text-sm text-center sm:text-left">
-            © {new Date().getFullYear()} Eptosi Smart Solutions. All rights reserved. · Part of{' '}
-            <span className="text-sky-400">Eptosi Group</span>
-          </p>
+        <div className="border-t border-white/10 pt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-between">
+          <div className="text-center sm:text-left">
+            <p className="text-slate-500 text-sm">
+              © {new Date().getFullYear()} Eptosi Smart Solutions. All rights reserved.
+            </p>
+            <p className="text-slate-500 text-sm mt-0.5">
+              Part of <span className="text-sky-400 font-medium">Eptosi Group of Companies</span>
+            </p>
+          </div>
           <div className="flex items-center gap-6 text-xs text-slate-500">
             <a href="#" className="hover:text-sky-400 transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-sky-400 transition-colors">Terms of Service</a>

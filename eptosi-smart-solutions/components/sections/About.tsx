@@ -23,7 +23,7 @@ export default function About() {
   const [ref, inView] = useInView({ threshold: 0.15, triggerOnce: true });
 
   return (
-    <section id="about" ref={ref} className="py-32 relative overflow-hidden">
+    <section id="about" ref={ref} className="py-16 md:py-32 relative overflow-hidden">
       {/* Background grid */}
       <div className="absolute inset-0 opacity-30" style={{
         backgroundImage: 'radial-gradient(circle at 20% 50%, rgba(14,165,233,0.08) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(34,197,94,0.06) 0%, transparent 40%)',
@@ -73,7 +73,7 @@ export default function About() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="relative"
           >
-            <div className="relative w-full aspect-square max-w-md mx-auto">
+            <div className="relative w-full aspect-square max-w-[280px] sm:max-w-md mx-auto">
               {/* Central hub */}
               <div className="absolute inset-[30%] rounded-full bg-gradient-to-br from-sky-500/30 to-cyan-500/30 border border-sky-500/40 flex items-center justify-center backdrop-blur-sm z-10">
                 <motion.div
@@ -195,13 +195,13 @@ export default function About() {
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.5 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-px rounded-2xl overflow-hidden border border-white/10"
+          className="grid grid-cols-2 md:grid-cols-4 gap-px rounded-2xl overflow-hidden border border-white/10 mt-0"
           style={{ background: 'rgba(14,165,233,0.05)' }}
         >
           {STATS.map(({ end, suffix, label }) => (
             <div
               key={label}
-              className="px-8 py-8 text-center"
+              className="px-4 py-6 sm:px-8 sm:py-8 text-center"
               style={{ background: 'rgba(3,7,18,0.6)' }}
             >
               <div className="text-4xl md:text-5xl font-bold mb-2">

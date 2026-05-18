@@ -18,7 +18,7 @@ export default function FloatingWhatsApp() {
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
+    <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 flex flex-col items-end gap-3">
       {/* Chat panel */}
       <AnimatePresence>
         {open && (
@@ -27,7 +27,7 @@ export default function FloatingWhatsApp() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.9 }}
             transition={{ duration: 0.3, ease: 'backOut' }}
-            className="w-72 rounded-2xl overflow-hidden shadow-2xl border border-white/10"
+            className="w-[calc(100vw-2rem)] max-w-[288px] rounded-2xl overflow-hidden shadow-2xl border border-white/10"
             style={{ background: '#0f172a' }}
           >
             {/* Header */}

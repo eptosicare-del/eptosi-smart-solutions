@@ -63,7 +63,7 @@ export default function Hero() {
       {/* ── Main content ── */}
       <motion.div
         style={{ y, opacity }}
-        className="relative z-10 container-custom text-center pt-40 pb-24 max-w-5xl mx-auto"
+        className="relative z-10 container-custom text-center pt-48 pb-16 md:pb-24 max-w-5xl mx-auto"
       >
         {/* Top badge */}
         <motion.div
@@ -87,13 +87,13 @@ export default function Hero() {
         >
           <h1 className="font-bold leading-[1.08] tracking-tight mb-7">
             <span
-              className="block text-5xl sm:text-6xl md:text-7xl lg:text-[82px] text-white mb-2"
+              className="block text-4xl sm:text-5xl md:text-6xl lg:text-[82px] text-white mb-2"
               style={{ letterSpacing: '-0.02em' }}
             >
               Engineering
             </span>
             <span
-              className="block text-5xl sm:text-6xl md:text-7xl lg:text-[82px] mb-2"
+              className="block text-4xl sm:text-5xl md:text-6xl lg:text-[82px] mb-2"
               style={{
                 letterSpacing: '-0.02em',
                 backgroundImage: 'linear-gradient(135deg, #38bdf8 0%, #0ea5e9 40%, #06b6d4 70%, #22c55e 100%)',
@@ -105,7 +105,7 @@ export default function Hero() {
               Smarter Futures
             </span>
             <span
-              className="block text-5xl sm:text-6xl md:text-7xl lg:text-[82px] text-white"
+              className="block text-4xl sm:text-5xl md:text-6xl lg:text-[82px] text-white"
               style={{ letterSpacing: '-0.02em' }}
             >
               with{' '}
@@ -165,7 +165,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.5 }}
-          className="flex flex-wrap items-center justify-center gap-0 max-w-2xl mx-auto rounded-2xl border border-white/[0.08] overflow-hidden"
+          className="grid grid-cols-2 sm:flex sm:flex-wrap items-center justify-center gap-0 max-w-2xl mx-auto rounded-2xl border border-white/[0.08] overflow-hidden"
           style={{ background: 'rgba(255,255,255,0.025)', backdropFilter: 'blur(12px)' }}
         >
           {[
